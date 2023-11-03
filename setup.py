@@ -10,7 +10,7 @@ ALL_VOICES = '--all-voices' in sys.argv and sys.argv.remove('--all-voices') is N
 PACKAGE_PATH = 'rhvoice_wrapper_data'
 RHVOICE = 'RHVoice'
 RHVOICE_GIT_TAG = '1.4.2'
-RHVOICE_GIT_URL = 'https://github.com/Olga-Yakovleva/RHVoice.git'
+RHVOICE_GIT_URL = 'https://github.com/malyushkin/digitil-rhvoice-wrapper-data.git'
 DATA_DIR = 'data'
 LICENSES_DIR = 'licenses'
 
@@ -102,7 +102,7 @@ class RHVoiceBuild(build):
         self.mkpath(self.build_lib)
         [self.mkpath(x) for _, x in targets]
 
-        clone = [['git', 'clone', '--depth=1', '--branch', RHVOICE_GIT_TAG, RHVOICE_GIT_URL, src_path], None]
+        clone = [['git', 'clone', '--depth=1', '--branch', RHVOICE_GIT_URL, src_path], None]
         if ALL_VOICES:
             clone[0].insert(2, '--recursive')
 
